@@ -25,6 +25,13 @@ const game = document.querySelector('#game'),
 minNum.textContent = min;
 maxNum.textContent = max;
 
+//PlayAgain Event listener
+game.addEventListener('mousedown', function(e) {
+  if(e.target.className === 'play-again') {
+    window.location.reload();
+  }
+})
+
 //Event listener for guess
 //parseInt used, to allow comparation between numbers
 //value in black => String, in green => Number
@@ -51,6 +58,7 @@ guessBtn.addEventListener('click', function(){
     //Check if are guesses left
     if(guessesLeft === 0) {
 
+      //Game over, lost
       gameOver(false, `Game over, you lost. The correct number was ${winningNum}`);
 
     } else {
@@ -89,4 +97,8 @@ function gameOver(won, msg) {
 
   //Won message
   setMessage(msg);
+
+  //Play again?
+  guessBtn.value = 'Play Again?'
+  guessBtn.className = 'play-again';
 }
