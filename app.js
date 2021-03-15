@@ -24,3 +24,22 @@ const game = document.querySelector('#game'),
 //Assign UI min and max
 minNum.textContent = min;
 maxNum.textContent = max;
+
+//Event listener for guess
+//parseInt used, to allow comparation between numbers
+//value in black => String, in green => Number
+
+guessBtn.addEventListener('click', function(){
+  let guess = parseInt(guessInput.value);
+
+  //Validate
+  if(isNaN(guess) || guess < min || guess > max){
+    setMessage(`Please enter a number between ${min} and ${max}`, 'red');
+  }
+});
+
+//Set message
+function setMessage(msg, color) {
+  message.style.color = color;
+  message.textContent = msg;
+}
