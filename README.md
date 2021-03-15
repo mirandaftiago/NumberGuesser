@@ -3,3 +3,5 @@ Guess the random generated number with validation for the correct range of numbe
 Winning, Losing, Game Over, Play Again functionality.
 
 Fixed Mozilla Firefox input field value when reloading page.
+
+Responsive layout with Bootstrap 5 to improve User Experience
