@@ -1,6 +1,6 @@
 /* 
 Game Function:
-- Player must guess a number between a min ad max
+- Player must guess a number between a min and max
 - Player gets a certain amount of guesses
 - Notify the player of guesses remaining
 - Notify the player of the correct answer if loose
@@ -54,7 +54,7 @@ guessBtn.addEventListener('click', function(){
 
     //Wrong number, decrement guesses
     guessesLeft -= 1;
-
+    
     //Check if are guesses left
     if(guessesLeft === 0) {
 
